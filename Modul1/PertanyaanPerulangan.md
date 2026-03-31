@@ -1,4 +1,12 @@
-# Praktikum Perulangan 1.6.4 - LED Running Light
+## Pertanyaan Praktikum Perulangan 1.6.4
+
+1. Gambarkan rangkaian schematic 5 LED running yang digunakan pada percobaan!  
+2. Jelaskan bagaimana program membuat efek LED berjalan dari kiri ke kanan! 
+3. Jelaskan bagaimana program membuat LED kembali dari kanan ke kiri! 
+4. Buatkan program agar LED menyala tiga LED kanan dan tiga LED kiri secara bergantian
+dan berikan penjelasan disetiap baris kode nya dalam bentuk README.md!
+
+---
 
 ## 1. Rangkaian Schematic 5 LED Running
 
@@ -173,80 +181,3 @@ void loop() {
 | 38 | `delay(timer);` | Memberi jeda sebesar timer (100ms) agar LED kiri menyala selama waktu tersebut |
 | 41-43 | `for (int ledPin = 2; ledPin < 8; ledPin++) { digitalWrite(ledPin, LOW); }` | Loop untuk mematikan semua LED sebelum loop berikutnya |
 | 46 | `delay(timer / 2);` | Memberi delay sebagai transisi sebelum LED kanan menyala kembali |
-
----
-
-## Perbandingan Program: Asli vs Bergantian
-
-| Aspek | Program Asli | Program Bergantian |
-|-------|-------------|------------------|
-| **Efek Utama** | LED berjalan kiri-kanan, kanan-kiri berulang | LED bergantian 3 kanan vs 3 kiri |
-| **Jumlah LED Menyala** | 1 LED per waktu | 3 LED per waktu |
-| **Pola Gerakan** | Sequential naik-turun | Parallel on-off |
-| **Jumlah Loop** | 2 nested loop | 2 fase if-else |
-| **Kompleksitas** | Sedang (nested loop) | Rendah (direct control) |
-| **Kecepatan Max** | Bergantung loop (6 iterasi) | Tetap (hanya transisi) |
-
----
-
-## Cara Menggunakan Program
-
-1. **Siapkan Hardware:**
-   - Arduino UNO atau compatible
-   - 5 buah LED + resistor 470Ω
-   - Breadboard dan kabel jumper
-   - Hubungkan sesuai rangkaian schematic di atas
-
-2. **Upload Program:**
-   - Copy kode dari `perulangan_bergantian.ino`
-   - Buka Arduino IDE
-   - Paste kode dan klik Upload
-   - Program akan langsung berjalan
-
-3. **Observasi Hasil:**
-   - Amati LED bergantian antara kelompok kanan (Pin 4,5,6) dan kiri (Pin 2,3,4)
-   - Frekuensi pergantian ditentukan oleh nilai `timer`
-   - Ubah nilai `timer` untuk mempercepat atau memperlambat efek
-
----
-
-## Modifikasi Lanjutan
-
-Untuk efek yang lebih menarik, Anda dapat memodifikasi:
-
-```cpp
-// Ubah menjadi pola alternating dengan fade effect
-void loop() {
-    // 3 LED kanan
-    for (int i = 0; i < 3; i++) {
-        digitalWrite(4 + i, HIGH);
-    }
-    delay(200);
-    
-    for (int i = 0; i < 3; i++) {
-        digitalWrite(4 + i, LOW);
-    }
-    
-    // 3 LED kiri
-    for (int i = 0; i < 3; i++) {
-        digitalWrite(2 + i, HIGH);
-    }
-    delay(200);
-    
-    for (int i = 0; i < 3; i++) {
-        digitalWrite(2 + i, LOW);
-    }
-}
-```
-
----
-
-## Kesimpulan
-
-Program perulangan LED running light mendemonstrasikan konsep:
-- Loop (for) untuk mengotomatisasi proses berulang
-- Output digital untuk mengontrol perangkat eksternal
-- Delay untuk mengatur waktu dan menciptakan efek visual
-- Logika boolean untuk kondisi loop
-
-Modifikasi program menjadi bergantian menunjukkan fleksibilitas Arduino dalam membuat berbagai efek LED yang menarik.
