@@ -105,21 +105,3 @@ void loop() {
 | 28 | `// Komentar penjelasan` | Pada tahap ini, loop tidak melakukan apa-apa dan LED tetap dalam kondisi terakhir |
 | 30 | `}` | Menutup blok else if kedua |
 | 31 | `}` | Menutup fungsi `loop()` |
-
----
-
-## Perbedaan Program Asli vs Program Modifikasi
-
-| Aspek | Program Asli | Program Modifikasi |
-|-------|-------------|-------------------|
-| **Alur** | Lambat (1000ms) → Cepat (100ms) → Reset | Cepat (100ms) → Sedang (550ms) → Mati/Berhenti |
-| **Nilai Awal timeDelay** | 1000ms | 100ms |
-| **Mekanisme Kontrol** | Menggunakan kondisi tunggal (if-else) | Menggunakan variabel `delayState` untuk melacak 3 tahap |
-| **Pengurangan Delay** | Otomatis dikurangi 100ms | Tidak ada pengurangan otomatis, hanya perubahan antar tahap |
-| **Fase Terakhir** | Reset kembali ke awal | Berhenti (tidak ada reset) |
-
----
-
-## Kesimpulan
-
-Program yang telah dimodifikasi mengubah alur perjalanan LED dari yang semula melakukan percepatan bertahap kemudian reset, menjadi alur yang lebih sederhana dengan hanya 3 tahap: cepat, sedang, dan berhenti. Penggunaan variabel `delayState` memudahkan pelacakan tahap saat ini dan membuat program lebih terstruktur serta mudah dipahami.
