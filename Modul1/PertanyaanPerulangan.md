@@ -10,10 +10,11 @@ dan berikan penjelasan disetiap baris kode nya dalam bentuk README.md!
 
 ## 1. Rangkaian Schematic 5 LED Running
 
+![Rangkaian Schematic LED Running](SCHEMATIC.png)
+
 ```
-         +5V
-          |
-      [R1 470Ω]   [R2 470Ω]   [R3 470Ω]   [R4 470Ω]   [R5 470Ω]
+     
+      [R1 220Ω]   [R2 220Ω]   [R3 220Ω]   [R4 220Ω]   [R5 220Ω]
          |            |            |            |            |
         LED1          LED2          LED3         LED4         LED5
          |            |            |            |            |
@@ -26,9 +27,8 @@ dan berikan penjelasan disetiap baris kode nya dalam bentuk README.md!
 
 Keterangan:
 - LED1 hingga LED5 terhubung ke Pin 2 hingga Pin 6 (GPIO Arduino)
-- Setiap LED memiliki resistor pembatas arus 470 Ohm
+- Setiap LED memiliki resistor pembatas arus 220 Ohm
 - Semua rangkaian terhubung ke GND (ground/mas)
-- Supply tegangan: +5V (dari Arduino)
 ```
 
 ---
@@ -97,8 +97,6 @@ Iterasi 5: [LED1 ON] [----] [----] [----] [----]
 ## 4. Program LED Bergantian: 3 LED Kanan vs 3 LED Kiri
 
 Program baru dengan efek LED bergantian 3 LED kanan dan 3 LED kiri:
-
-### File: `perulangan_bergantian.ino`
 
 ```cpp
 // Inisialisasi delay untuk kontrol kecepatan LED
