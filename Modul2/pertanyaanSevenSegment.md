@@ -13,49 +13,6 @@
 
 ![Rangkaian Schematic Seven Segment](schemanticSevenSegment.png)
 
-```
-Arduino Pin Connections:
-        Pin7 (a)     Pin6 (b)     Pin5 (c)     Pin11 (d)
-         |            |            |            |
-    ----[R 220Ω]- |a| ----[R 220Ω]- |b| ----[R 220Ω]- |c| ----[R 220Ω]- |d|
-         |        |   |     |        |   |     |        |   |     |        |   |
-         |        |___|     |        |___|     |        |___|     |        |___|
-         |         / \      |         / \      |         / \      |         / \
-         |        /   \     |        /   \     |        /   \     |        /   \
-         |       |     |    |       |     |    |       |     |    |       |     |
-         |       | LED |    |       | LED |    |       | LED |    |       | LED |
-         |       |     |    |       |     |    |       |     |    |       |     |
-         |        \   /     |        \   /     |        \   /     |        \   /
-         |         \ /      |         \ /      |         \ /      |         \ /
-         |          |       |          |       |          |       |          |
-         +----------+-------+----------+-------+----------+-------+----------+
-                              |
-                            GND (Common Cathode)
-
-
-        Pin10 (e)    Pin8 (f)     Pin9 (g)     Pin4 (dp)
-         |            |            |            |
-    ----[R 220Ω]- |e| ----[R 220Ω]- |f| ----[R 220Ω]- |g| ----[R 220Ω]- |dp|
-         |        |   |     |        |   |     |        |   |     |        |   |
-         |        |___|     |        |___|     |        |___|     |        |___|
-         |         / \      |         / \      |         / \      |         / \
-         |        /   \     |        /   \     |        /   \     |        /   \
-         |       |     |    |       |     |    |       |     |    |       |     |
-         |       | LED |    |       | LED |    |       | LED |    |       | LED |
-         |       |     |    |       |     |    |       |     |    |       |     |
-         |        \   /     |        \   /     |        \   /     |        \   /
-         |         \ /      |         \ /      |         \ /      |         \ /
-         |          |       |          |       |          |       |          |
-         +----------+-------+----------+-------+----------+-------+----------+
-                              |
-                            GND (Common Cathode)
-
-Keterangan:
-- Seven Segment Display menggunakan Common Cathode (semua katoda terhubung ke GND)
-- Setiap segmen memiliki resistor pembatas arus 220 Ohm
-- Pin Arduino: 7, 6, 5, 11, 10, 8, 9, 4 untuk segment a-g dan dp
-- Setiap PIN Arduino mengirim sinyal HIGH untuk menyalakan segment
-```
 
 ---
 
